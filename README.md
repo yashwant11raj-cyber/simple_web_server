@@ -108,9 +108,12 @@ httpd.serve_forever()
 
 # OUTPUT:
 
-![alt text](<Screenshot 2026-11-25 203735.png>)
-![alt text](<Screenshot 2026-11-25 203751.png>)
-![alt text](<Screenshot 2026-11-25 203808.png>)
+Browser output:
+![Browser output](<Screenshot 2026-11-25 203735.png>)
+Hover effect on a table row:
+![Hover effect](<Screenshot 2026-11-25 203751.png>)
+Terminal log of the server:
+![Terminal log](<Screenshot 2026-11-25 203808.png>)
 
 # RESULT:
 
