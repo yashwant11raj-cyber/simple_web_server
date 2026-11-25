@@ -3,6 +3,7 @@ content='''<html>
 <head>
     <title>My Laptop Configuration</title>
     <style>
+        body { font-family: Arial, sans-serif; background-color: #fafafa; }
         table, th, td, tr {
             border: 2px solid black;
             border-collapse: collapse;
@@ -12,6 +13,10 @@ content='''<html>
             margin-right: auto;
             background-color: #f2f2f2;
         }
+        th, td { padding: 8px 12px; text-align: left; }
+        th { background-color: #0b5ed7; color: white; }
+        tr { background-color: #e6e6e6; }
+        tr:hover { background-color: #ffe9a8; }
     </style>
 </head>
 <body>
@@ -50,11 +55,12 @@ content='''<html>
         <td>Windows 11 Home Single Language</td>
     </tr>
 </table>
+<p style="text-align:center">Name: YASHWANT RAJ P | Reg No: 26006135</p>
 </body>
 </html>'''
 class Myserver(BaseHTTPRequestHandler):
     def do_GET(self):
-        print("Get request recieved...")
+        print("Get request received for path: ",self.path)
         self.send_response(200)
         self.send_header('content-type','text/html')
         self.end_headers()

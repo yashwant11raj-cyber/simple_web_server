@@ -1,34 +1,44 @@
 # EX01 Developing a Simple Webserver
 
 # Date: 17/09/2026
+
 # AIM:
+
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
 # DESIGN STEPS:
+
 ## Step 1:
+
 HTML content creation.
 
 ## Step 2:
+
 Design of webserver workflow.
 
 ## Step 3:
+
 Implementation using Python code.
 
 ## Step 4:
+
 Serving the HTML pages.
 
 ## Step 5:
+
 Testing the webserver.
 
 # PROGRAM:
 
 simple.py
-~~~
+
+```
 from http.server import HTTPServer,BaseHTTPRequestHandler
 content='''<html>
 <head>
     <title>My Laptop Configuration</title>
     <style>
+        body { font-family: Arial, sans-serif; background-color: #fafafa; }
         table, th, td, tr {
             border: 2px solid black;
             border-collapse: collapse;
@@ -38,6 +48,10 @@ content='''<html>
             margin-right: auto;
             background-color: #f2f2f2;
         }
+        th, td { padding: 8px 12px; text-align: left; }
+        th { background-color: #0b5ed7; color: white; }
+        tr { background-color: #e6e6e6; }
+        tr:hover { background-color: #ffe9a8; }
     </style>
 </head>
 <body>
@@ -76,11 +90,12 @@ content='''<html>
         <td>Windows 11 Home Single Language</td>
     </tr>
 </table>
+<p style="text-align:center">Name: YASHWANT RAJ P | Reg No: 26006135</p>
 </body>
 </html>'''
 class Myserver(BaseHTTPRequestHandler):
     def do_GET(self):
-        print("Get request recieved...")
+        print("Get request received for path: ",self.path)
         self.send_response(200)
         self.send_header('content-type','text/html')
         self.end_headers()
@@ -89,10 +104,14 @@ print("This is my webserver")
 server_address=('',8080)
 httpd=HTTPServer(server_address,Myserver)
 httpd.serve_forever()
-~~~
+```
+
 # OUTPUT:
-![alt text](<Experiment-1/Screenshot 2026-10-13 092710.png>)
-![alt text](<Experiment-1/Screenshot 2026-10-13 092747.png>)
+
+![alt text](<Screenshot 2026-11-25 203735.png>)
+![alt text](<Screenshot 2026-11-25 203751.png>)
+![alt text](<Screenshot 2026-11-25 203808.png>)
 
 # RESULT:
-The program for implementing simple webserver is executed successfully.
+
+The simple web server was developed using Python's http.server module. The laptop configuration page was served and tested successfully at 127.0.0.1:8080.
